@@ -1,3 +1,5 @@
+# How to deploy
+Execute ./sspa deploy_bucket learnjs.jurikolo.me to upload to S3
 
 ## Change Log
 
