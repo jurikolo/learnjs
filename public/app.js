@@ -42,7 +42,8 @@ learnjs.problemView = function (data) {
 
 learnjs.showView = function (hash) {
     var routes = {
-        '#problem': learnjs.problemView
+        '#problem': learnjs.problemView,
+        '': learnjs.landingView()
     };
     var hashParts = hash.split('-');
     var viewFn = routes[hashParts[0]];
@@ -69,11 +70,11 @@ learnjs.flashElement = function (elem, content) {
         elem.html(content);
         elem.fadeIn();
     });
-}
+};
 
 learnjs.template = function (name) {
     return $('.templates .' + name).clone();
-}
+};
 
 learnjs.buildCorrectFlash = function (problemNum) {
     var correctFlash = learnjs.template('correct-flash');
@@ -85,4 +86,8 @@ learnjs.buildCorrectFlash = function (problemNum) {
         link.text("You're Finished!");
     }
     return correctFlash;
-}
+};
+
+learnjs.landingView = function () {
+    return learnjs.template('landing-view');
+};
